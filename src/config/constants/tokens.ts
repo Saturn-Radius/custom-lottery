@@ -25,11 +25,11 @@ export const mainnetTokens = {
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   cake: new Token(
     MAINNET,
-    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    '0x2322afaac81697e770c19a58df587d8739777536',
     18,
-    'CAKE',
-    'PancakeSwap Token',
-    'https://pancakeswap.finance/',
+    'FAST',
+    'FastSwapToken',
+    'https://fastswap.finance/',
   ),
   tlos: new Token(MAINNET, '0xb6C53431608E626AC81a9776ac3e999c5556717c', 18, 'TLOS', 'Telos', 'https://www.telos.net/'),
   stephero: new Token(

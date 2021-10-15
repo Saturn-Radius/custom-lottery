@@ -37,6 +37,9 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
+            <Route path="/" exact>
+              <Redirect to="/lottery" />
+            </Route>
             <Route path="/lottery">
               <Lottery />
             </Route>
