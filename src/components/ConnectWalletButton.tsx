@@ -9,7 +9,7 @@ const ConnectWalletButton = (props) => {
   const { onPresentConnectModal } = useWalletModal(login, logout)
 
   return (
-    <Button onClick={onPresentConnectModal} {...props}>
+    <Button  style={{backgroundColor:'#1BB697',boxShadow:'2px 7px 7px -1px rgba(27, 182, 151, 0.3)'}} onClick={onPresentConnectModal} {...props}>
       {t('Connect')}
     </Button>
   )

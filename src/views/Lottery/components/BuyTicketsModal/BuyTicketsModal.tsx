@@ -35,9 +35,11 @@ import NumTicketsToBuyButton from './NumTicketsToBuyButton'
 import EditNumbersModal from './EditNumbersModal'
 import { useTicketsReducer } from './useTicketsReducer'
 
+
 const StyledModal = styled(Modal)`
   min-width: 280px;
   max-width: 320px;
+  font=color="#999999"
 `
 
 const ShortcutButtonsWrapper = styled(Flex)<{ isVisible: boolean }>`
@@ -308,15 +310,15 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
 
   return (
     // <StyledModal title={t('Buy Tickets')} onDismiss={onDismiss} headerBackground={theme.colors.gradients.cardHeader}>
-    <StyledModal title={t('Buy Tickets')} onDismiss={onDismiss} >
+    <StyledModal title={t('Buy Tickets')} onDismiss={onDismiss}>
       {tooltipVisible && tooltip}
       <Flex alignItems="center" justifyContent="space-between" mb="8px">
-        <Text color="textSubtle">{t('Buy')}:</Text>
+        <Text color="#333333" fontSize="30px">{t('Buy')}:</Text>
         <Flex alignItems="center" minWidth="70px">
-          <Text mr="4px" bold>
+          <img src="/images/lottery/ticket.png" width="40px" height="40px" alt="" />
+          <Text mr="4px" bold color="#1BB697" fontSize="30px">
             {t('Tickets')}
           </Text>
-          <Ticket />
         </Flex>
       </Flex>
       <BalanceInput
@@ -381,10 +383,10 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
       )}
       <Flex flexDirection="column">
         <Flex mb="8px" justifyContent="space-between">
-          <Text color="textSubtle" fontSize="14px">
+          <Text color="#999999" fontSize="14px">
             {t('Cost')} (FAST)
           </Text>
-          <Text color="textSubtle" fontSize="14px">
+          <Text color="#999999" fontSize="14px">
             {priceTicketInCake && getFullDisplayBalance(priceTicketInCake.times(ticketsToBuy || 0))} FAST
           </Text>
         </Flex>
@@ -395,22 +397,22 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
               {discountValue && totalCost ? percentageDiscount() : 0}%
             </Text>
             {/* <Text display="inline" color="textSubtle" fontSize="14px"> */}
-            <Text style={{display: 'inline'}} color="textSubtle" fontSize="14px">
+            <Text style={{display: 'inline'}} color="#999999" fontSize="14px">
               {t('Bulk discount')}
             </Text>
             <Flex alignItems="center" justifyContent="center" ref={targetRef}>
-              <HelpIcon ml="4px" width="14px" height="14px" color="textSubtle" />
+              <HelpIcon ml="4px" width="14px" height="14px" color="#999999" />
             </Flex>
           </Flex>
-          <Text fontSize="14px" color="textSubtle">
+          <Text fontSize="14px" color="#999999">
             ~{discountValue} FAST
           </Text>
         </Flex>
         <Flex borderTop={`1px solid ${theme.colors.borderColor}`} pt="8px" mb="24px" justifyContent="space-between">
-          <Text color="textSubtle" fontSize="16px">
+          <Text color="#999999" fontSize="16px">
             {t('You pay')}
           </Text>
-          <Text fontSize="16px" bold>
+          <Text fontSize="16px" bold color="#1BB697" >
             ~{totalCost} FAST
           </Text>
         </Flex>
@@ -453,7 +455,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
           <ConnectWalletButton />
         )}
 
-        <Text mt="24px" fontSize="12px" color="textSubtle">
+        <Text mt="24px" fontSize="12px" color="#999999">
           {t(
             '"Buy Instantly" chooses random numbers, with no duplicates among your tickets. Prices are set before each round starts, equal to $5 at that time. Purchases are final.',
           )}

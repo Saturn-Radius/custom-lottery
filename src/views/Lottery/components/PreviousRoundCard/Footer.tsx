@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, CardFooter } from '@fastswap-uikit'
+import { Flex, CardFooter,Text } from '@fastswap-uikit'
 import { ExpandableLabel } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryRound } from 'state/types'
@@ -19,7 +19,9 @@ const PreviousRoundCardFooter: React.FC<PreviousRoundCardFooterProps> = ({ lotte
       {isExpanded && <FooterExpanded lotteryNodeData={lotteryNodeData} lotteryId={lotteryId} />}
       <Flex p="8px 24px" alignItems="center" justifyContent="center">
         <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded(!isExpanded)}>
+          <Text color="#1BB697" >
           {isExpanded ? t('Hide') : t('Details')}
+          </Text>
         </ExpandableLabel>
       </Flex>
     </CardFooter>

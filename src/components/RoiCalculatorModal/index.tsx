@@ -7,10 +7,11 @@ import {
   Flex,
   ButtonMenu,
   Checkbox,
+  BalanceInput,
   HelpIcon,
   ButtonMenuItem,
-} from '@fastswap-uikit'
-import { BalanceInput, useTooltip, } from '@pancakeswap/uikit'
+  useTooltip,
+} from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -141,6 +142,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
       title={t('ROI Calculator')}
       onDismiss={onBack || onDismiss}
       onBack={onBack ?? null}
+      headerBackground="gradients.cardHeader"
     >
       <ScrollableContainer>
         <Flex flexDirection="column" mb="8px">

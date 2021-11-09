@@ -32,10 +32,10 @@ interface YourHistoryCardProps {
 }
 
 const StyledCard = styled(Card)`
-  width: 100%;
+  width: 200px;
 
   ${({ theme }) => theme.mediaQueries.md} {
-    width: 756px;
+    width: 200px;
   }
 `
 
@@ -81,7 +81,7 @@ const YourHistoryCard: React.FC<YourHistoryCardProps> = ({ handleShowMoreClick, 
         <Flex alignItems="center">
           <ArrowBackIcon cursor="pointer" onClick={() => clearState()} mr="20px" />
           <Flex flexDirection="column" alignItems="flex-start" justifyContent="center">
-            <Heading>  {/* scale="md" mb="4px" */}
+            <Heading color="#333333">   {/* scale="md" mb="4px" */}
               {t('Round')} {selectedLotteryId || ''}
             </Heading>
             {selectedLotteryNodeData?.endTime ? (
@@ -96,7 +96,7 @@ const YourHistoryCard: React.FC<YourHistoryCardProps> = ({ handleShowMoreClick, 
       )
     }
 
-    return <Heading>{t('Rounds')}</Heading>
+    return <Heading color="#333333">{t('Rounds')}</Heading>
   }
 
   const getBody = () => {
@@ -158,11 +158,13 @@ const YourHistoryCard: React.FC<YourHistoryCardProps> = ({ handleShowMoreClick, 
   }
 
   return (
-    <StyledCard>
-      <CardHeader>{getHeader()}</CardHeader>
-      {getBody()}
-      {getFooter()}
-    </StyledCard>
+    // <StyledCard>
+    //   <CardHeader>{getHeader()}</CardHeader>
+    //   {getBody()}
+    //   {getFooter()}
+    // </StyledCard>
+    <>
+    </>
   )
 }
 

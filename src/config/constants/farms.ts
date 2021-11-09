@@ -9,7 +9,7 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 0,
-    lpSymbol: 'CAKE',
+    lpSymbol: 'FAST',
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
@@ -19,10 +19,11 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 251,
-    lpSymbol: 'CAKE-BNB LP',
+    lpSymbol: 'FAST-BNB LP',
     lpAddresses: {
       97: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
-      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      56: '0xbB609bd6179C6Ab5Ac9E73DB6661B0cfeD876C04',
+      // 56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
     },
     token: serializedTokens.cake,
     quoteToken: serializedTokens.wbnb,
@@ -462,7 +463,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 422,
-    lpSymbol: 'CAKE-USDT LP',
+    lpSymbol: 'FAST-USDT LP',
     lpAddresses: {
       97: '',
       56: '0xA39Af17CE4a8eb807E076805Da1e2B8EA7D0755b',
@@ -842,7 +843,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 389,
-    lpSymbol: 'CAKE-BUSD LP',
+    lpSymbol: 'FAST-BUSD LP',
     lpAddresses: {
       97: '',
       56: '0x804678fa97d91B974ec2af3c843270886528a9E6',
@@ -2075,7 +2076,7 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 139,
-    lpSymbol: 'CAKE-BNB LP',
+    lpSymbol: 'FAST-BNB LP',
     lpAddresses: {
       97: '',
       56: '0xFB7E9FE9D13561AdA7131Fa746942a14F7dd4Cf6',
@@ -3198,7 +3199,7 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 1,
-    lpSymbol: 'CAKE-BNB LP',
+    lpSymbol: 'FAST-BNB LP',
     lpAddresses: {
       97: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
       56: '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6',
@@ -4428,7 +4429,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 34,
-    lpSymbol: 'STAX-CAKE LP',
+    lpSymbol: 'STAX-FAST LP',
     lpAddresses: {
       97: '0xE66790075ad839978fEBa15D4d8bB2b415556a1D',
       56: '0x7cd05f8b960ba071fdf69c750c0e5a57c8366500',
@@ -4439,7 +4440,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 35,
-    lpSymbol: 'NAR-CAKE LP',
+    lpSymbol: 'NAR-FAST LP',
     lpAddresses: {
       97: '0xE66790075ad839978fEBa15D4d8bB2b415556a1D',
       56: '0x745c4fd226e169d6da959283275a8e0ecdd7f312',
@@ -4450,7 +4451,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 36,
-    lpSymbol: 'NYA-CAKE LP',
+    lpSymbol: 'NYA-FAST LP',
     lpAddresses: {
       97: '0xE66790075ad839978fEBa15D4d8bB2b415556a1D',
       56: '0x2730bf486d658838464a4ef077880998d944252d',
@@ -4461,7 +4462,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 38,
-    lpSymbol: 'bROOBEE-CAKE LP',
+    lpSymbol: 'bROOBEE-FAST LP',
     lpAddresses: {
       97: '',
       56: '0x970858016C963b780E06f7DCfdEf8e809919BcE8',

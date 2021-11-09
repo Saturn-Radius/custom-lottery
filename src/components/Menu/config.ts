@@ -5,7 +5,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: '/',
+    href: `${process.env.REACT_APP_BASE_EXCHANGE_URL}`,
   },
   {
     label: t('Trade'),
@@ -13,18 +13,28 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: '/swap',
+        href: `${process.env.REACT_APP_BASE_EXCHANGE_URL}`,
       },
       {
         label: t('Liquidity'),
-        href: '/liquidity',
+        href: `${process.env.REACT_APP_BASE_EXCHANGE_URL}/#/pool`,
       },
     ],
   },
   {
     label: t('Farms'),
     icon: 'FarmIcon',
-    href: '/farms',
+    href: `${process.env.REACT_APP_MAIN_HOST}`,
+  },
+  {
+    label: 'NewFarms V3',
+    icon: 'FarmIcon',
+    href: `${process.env.REACT_APP_NEW_FARMSV3_HOST}`,
+  },
+  {
+    label: 'NewFarms',
+    icon: 'FarmIcon',
+    href: `${process.env.REACT_APP_NEW_FARMS_HOST}/newfarms`,
   },
   {
     label: t('Lottery'),
@@ -34,7 +44,24 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Info'),
     icon: 'InfoIcon',
-    href: '/info',
+    items: [
+      {
+        label: 'Overview',
+        href: `${process.env.REACT_APP_INFO_HOST}`,
+      },
+      {
+        label: 'Tokens',
+        href: `${process.env.REACT_APP_INFO_HOST}/tokens`,
+      },
+      {
+        label: 'Pairs',
+        href: `${process.env.REACT_APP_INFO_HOST}/pairs`,
+      },
+      {
+        label: 'Accounts',
+        href: `${process.env.REACT_APP_INFO_HOST}/accounts`,
+      },
+    ],
   },
 ]
 

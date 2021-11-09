@@ -8,11 +8,14 @@ const StyledInput = styled(Input)`
   width: 60px;
   height: 100%;
   padding: 4px 16px;
+  color: #1BB697;
+  background: #E6F4F1;
+  border: 1px solid #1BB697;
 `
 
 const StyledIconButton = styled(IconButton)`
   width: 32px;
-
+  color:#200E32;
   :disabled {
     background: none;
 
@@ -53,7 +56,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
   return (
     <Flex alignItems="center" justifyContent="space-between">
       <Flex alignItems="center">
-        <Heading mr="8px">{t('Round')}</Heading>
+        <Heading mr="8px" color="#333333">{t('Round')}</Heading>
         <StyledInput
           pattern="^[0-9]+$"
           inputMode="numeric"
@@ -73,7 +76,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           scale="sm"
           mr="4px"
         >
-          <ArrowBackIcon />
+          <ArrowBackIcon color="#200E32"/>
         </StyledIconButton>
         <StyledIconButton
           disabled={selectedRoundIdAsInt >= mostRecentRound}
@@ -82,7 +85,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           scale="sm"
           mr="4px"
         >
-          <ArrowForwardIcon />
+          <ArrowForwardIcon color="#200E32" />
         </StyledIconButton>
         <StyledIconButton
           disabled={selectedRoundIdAsInt >= mostRecentRound}
@@ -90,7 +93,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           variant="text"
           scale="sm"
         >
-          <ArrowLastIcon />
+          <ArrowLastIcon color="#200E32" />
         </StyledIconButton>
       </Flex>
     </Flex>

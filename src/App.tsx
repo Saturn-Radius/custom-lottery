@@ -6,6 +6,8 @@ import useEagerConnect from 'hooks/useEagerConnect'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { useFetchProfile } from 'state/profile/hooks'
 import { DatePickerPortal } from 'components/DatePicker'
+import { usePollCoreFarmData } from 'state/farms/hooks'
+import useScrollOnRouteChange from 'hooks/useScrollOnRouteChange'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
@@ -13,6 +15,7 @@ import { ToastListener } from './contexts/ToastsContext'
 import PageLoader from './components/Loader/PageLoader'
 import EasterEgg from './components/EasterEgg'
 import history from './routerHistory'
+
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -29,7 +32,8 @@ const App: React.FC = () => {
   usePollBlockNumber()
   useEagerConnect()
   useFetchProfile()
-
+  usePollCoreFarmData()
+  useScrollOnRouteChange()
   return (
     <Router history={history}>
       <ResetCSS />

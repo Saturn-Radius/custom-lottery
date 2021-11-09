@@ -82,7 +82,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
       {isLatestRound && <StyledCardRibbon text={t('Latest')} />}
       <Grid>
         <Flex justifyContent={['center', null, null, 'flex-start']}>
-          <Heading mb="24px">{t('Winning Number')}</Heading>
+          <Heading mb="24px" color="#333333">{t('Winning Number')}</Heading>
         </Flex>
         <Flex maxWidth={['240px', null, null, '100%']} justifyContent={['center', null, null, 'flex-start']}>
           {lotteryNodeData ? (

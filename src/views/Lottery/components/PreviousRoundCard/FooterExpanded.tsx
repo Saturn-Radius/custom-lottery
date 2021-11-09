@@ -20,6 +20,14 @@ const NextDrawWrapper = styled(Flex)`
     flex-direction: row;
   }
 `
+const Title = styled.span<{ color?: string ,size?:string}>`
+  padding-top:30px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: ${({ size }) => size};
+  color:${({ color }) => color};
+`;
+
 
 const PreviousRoundCardFooter: React.FC<{ lotteryNodeData: LotteryRound; lotteryId: string }> = ({
   lotteryNodeData,
@@ -64,17 +72,19 @@ const PreviousRoundCardFooter: React.FC<{ lotteryNodeData: LotteryRound; lottery
         {prizeInBusd.isNaN() ? (
           <Skeleton my="7px" height={40} width={200} />
         ) : (
-          <Heading lineHeight="1" color="secondary">  {/* scale="xl" */}
+          <>
+          <Title size="30px" color="#FFB237">  {/* scale="xl" */}
             ~${formatNumber(getBalanceNumber(prizeInBusd), 0, 0)}
-          </Heading>
+          </Title>
+          </>
         )}
         {prizeInBusd.isNaN() ? (
           <Skeleton my="2px" height={14} width={90} />
         ) : (
           <Balance
             fontSize="14px"
-            color="textSubtle"
-            unit=" CAKE"
+            color="#999999"
+            unit=" "
             value={getBalanceNumber(lotteryNodeData?.amountCollectedInCake)}
             decimals={0}
           />
@@ -87,19 +97,21 @@ const PreviousRoundCardFooter: React.FC<{ lotteryNodeData: LotteryRound; lottery
     <NextDrawWrapper>
       <Flex mr="24px" flexDirection="column" justifyContent="space-between">
         <Box>
-          <Heading>{t('Prize pot')}</Heading>
+          <Heading color="#333333">{t('Prize pot')}</Heading>
           {getPrizeBalances()}
         </Box>
         <Box mb="24px">
           <Flex>
-            <Text fontSize="14px">  {/*  display="inline" */}
+            <Title size="14px" color="#333333">  {/*  display="inline" */}
               {t('Total players this round')}:{' '}
+            </Title>
               {lotteryNodeData && (lotteryGraphDataFromState || fetchedLotteryGraphData) ? (
-                getTotalUsers()
+              <Title size="14px" color="#1BB697">
+                {getTotalUsers()}
+              </Title>
               ) : (
                 <Skeleton height={14} width={31} />
               )}
-            </Text>
           </Flex>
         </Box>
       </Flex>

@@ -36,7 +36,9 @@ const FoldableText: React.FC<FoldableTextProps> = ({ title, children, ...props }
         <Text fontWeight="bold">{title}</Text>
         <StyledExpandableLabelWrapper>
           <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded(!isExpanded)}>
+          <Text color="#1BB697" >
             {isExpanded ? t('Hide') : t('Details')}
+          </Text>
           </ExpandableLabel>
         </StyledExpandableLabelWrapper>
       </Flex>

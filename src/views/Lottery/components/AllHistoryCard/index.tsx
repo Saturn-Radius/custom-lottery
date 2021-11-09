@@ -13,10 +13,6 @@ import PreviousRoundCardFooter from '../PreviousRoundCard/Footer'
 
 const StyledCard = styled(Card)`
   width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    width: 756px;
-  }
 `
 
 const StyledCardHeader = styled(CardHeader)`
@@ -107,7 +103,7 @@ const AllHistoryCard = () => {
         />
         <Box mt="8px">
           {selectedLotteryNodeData?.endTime ? (
-            <Text fontSize="14px">
+            <Text fontSize="14px" color="#333333">
               {t('Drawn')} {getDrawnDate(selectedLotteryNodeData.endTime)}
             </Text>
           ) : (

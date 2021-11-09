@@ -6,10 +6,21 @@ const HistoryTabMenu = ({ setActiveIndex, activeIndex }) => {
   const { t } = useTranslation()
 
   return (
-    <ButtonMenu activeIndex={activeIndex} onItemClick={setActiveIndex} scale="sm" variant="subtle">
-      <ButtonMenuItem>{t('All History')}</ButtonMenuItem>
-      <ButtonMenuItem>{t('Your History')}</ButtonMenuItem>
-    </ButtonMenu>
+    <>
+      {activeIndex? (
+        <ButtonMenu activeIndex={activeIndex} onItemClick={setActiveIndex} scale="sm" variant="subtle">
+        <ButtonMenuItem style={{ backgroundColor: "#FFB237",color:"white",boxShadow: "0 0 0 " }}>{t('All History')}</ButtonMenuItem>
+        <ButtonMenuItem style={{ backgroundColor: "#eeeaf4",color: "#FFB237",boxShadow: "0 0 0 "}}>{t('Your History')}</ButtonMenuItem>
+        </ButtonMenu>
+     ):
+     (
+      <ButtonMenu activeIndex={activeIndex} onItemClick={setActiveIndex} scale="sm" variant="subtle">
+      <ButtonMenuItem style={{ backgroundColor: "#eeeaf4",color:"#FFB237",boxShadow: "0 0 0 " }}>{t('All History')}</ButtonMenuItem>
+      <ButtonMenuItem style={{ backgroundColor: "#FFB237",color: "white",boxShadow: "0 0 0 " }}>{t('Your History')}</ButtonMenuItem>
+      </ButtonMenu>
+     )
+     }
+    </>
   )
 }
 

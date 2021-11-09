@@ -38,14 +38,6 @@ const Grid = styled.div`
 
 const StyledCard = styled(Card)`
   width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 520px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    width: 756px;
-  }
 `
 
 const NextDrawWrapper = styled.div`
@@ -85,7 +77,7 @@ const NextDrawCard = () => {
         ) : (
           <Balance
             fontSize="40px"
-            color="secondary"
+            color="#FFB237"
             textAlign={['center', null, null, 'left']}
             lineHeight="1"
             bold
@@ -98,8 +90,8 @@ const NextDrawCard = () => {
           <Skeleton my="2px" height={14} width={90} />
         ) : (
           <Balance
-            fontSize="14px"
-            color="textSubtle"
+            fontSize="16px"
+            color="#999999"
             textAlign={['center', null, null, 'left']}
             unit=" FAST"
             value={getBalanceNumber(amountCollectedInCake)}
@@ -137,8 +129,8 @@ const NextDrawCard = () => {
     <StyledCard>
       <CardHeader p="16px 24px">
         <Flex justifyContent="space-between">
-          <Heading mr="12px">{t('Next Draw')}</Heading>
-          <Text>
+          <Heading mr="12px" color="#333333">{t('Next Draw')}</Heading>
+          <Text color="#333333">
             {currentLotteryId && `#${getNextDrawId()}`} {Boolean(endTime) && getNextDrawDateTime()}
           </Text>
         </Flex>
@@ -146,13 +138,13 @@ const NextDrawCard = () => {
       <CardBody>
         <Grid>
           <Flex justifyContent={['center', null, null, 'flex-start']}>
-            <Heading>{t('Prize Pot')}</Heading>
+            <Heading color="#333333">{t('Prize Pot')}</Heading>
           </Flex>
           <Flex flexDirection="column" mb="18px">
             {getPrizeBalances()}
           </Flex>
           <Box display={['none', null, null, 'flex']}>
-            <Heading>{t('Your tickets')}</Heading>
+            <Heading color="#333333">{t('Your tickets')}</Heading>
           </Box>
           <Flex flexDirection={['column', null, null, 'row']} alignItems={['center', null, null, 'flex-start']}>
             {isLotteryOpen && (
@@ -163,13 +155,13 @@ const NextDrawCard = () => {
               >
                 {account && (
                   <Flex justifyContent={['center', null, null, 'flex-start']}>
-                    <Text>{youHaveText} </Text> {/* display="inline" */}
+                    <Text fontSize="16px" fontWeight="500" color="#666666">{youHaveText} </Text>
                     {!userTickets.isLoading ? (
                       <Balance value={userTicketCount} decimals={0} bold mx="4px" />
                     ) : (
                       <Skeleton mx="4px" height={20} width={40} />
                     )}
-                    <Text> {ticketsThisRoundText}</Text>  {/* display="inline" */}
+                    <Text fontSize="16px" fontWeight="500" color="#666666"> {ticketsThisRoundText}</Text>
                   </Flex>
                 )}
                 {!userTickets.isLoading && userTicketCount > 0 && (
@@ -182,9 +174,9 @@ const NextDrawCard = () => {
                     variant="text"
                     scale="sm"
                   >
-                    {t('View your tickets')}
+                   <Text fontSize="18px" fontWeight="800" color="#1BB697">  {t('View your tickets')} </Text>
                   </Button>
-                )}
+                 )}
               </Flex>
             )}
             <BuyTicketsButton disabled={ticketBuyIsDisabled} maxWidth="280px" />
@@ -200,7 +192,9 @@ const NextDrawCard = () => {
         {(status === LotteryStatus.OPEN || status === LotteryStatus.CLOSE) && (
           <Flex p="8px 24px" alignItems="center" justifyContent="center">
             <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded(!isExpanded)}>
+            <Text color="#1BB697" >
               {isExpanded ? t('Hide') : t('Details')}
+            </Text>
             </ExpandableLabel>
           </Flex>
         )}

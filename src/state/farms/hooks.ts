@@ -7,6 +7,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceAmount } from 'utils/formatBalance'
 import { farmsConfig } from 'config/constants'
 import useRefresh from 'hooks/useRefresh'
+import axios from 'axios'
 import { deserializeToken } from 'state/user/hooks/helpers'
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, nonArchivedFarms } from '.'
 import { State, SerializedFarm, DeserializedFarmUserData, DeserializedFarm, DeserializedFarmsState } from '../types'
@@ -148,10 +149,20 @@ export const usePriceCakeBusd = (): BigNumber => {
   const cakeBnbFarm = useFarmFromPid(251)
 
   const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
-
+  console.log(cakeBnbFarm);
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceBusdAsString)
   }, [cakePriceBusdAsString])
 
   return cakePriceBusd
 }
+// export const usePriceFastBusd = (): BigNumber => {
+//   const fastRes = await axios.get('https://api.coingecko.com/api/v3/coins/fastswap?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')
+//   const fastPriceBusdAsString = fastRes.data.market_data.current_price.usd
+//   console.log("11111111111111", fastPriceBusdAsString);
+//   const fastPriceBusd = useMemo(() => {
+//     return new BigNumber(fastPriceBusdAsString)
+//   }, [fastPriceBusdAsString])
+
+//   return fastPriceBusd
+// }

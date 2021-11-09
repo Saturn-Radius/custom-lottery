@@ -42,7 +42,7 @@ const RewardBracketDetail: React.FC<RewardBracketDetailProps> = ({
       {isLoading ? (
         <Skeleton mb="4px" mt="8px" height={16} width={80} />
       ) : (
-        <Text bold color={isBurn ? 'failure' : 'secondary'}>
+        <Text fontSize="14px" bold color={isBurn ? '#F92020' : '#1BB697'}>
           {getRewardText()}
         </Text>
       )}
@@ -50,29 +50,32 @@ const RewardBracketDetail: React.FC<RewardBracketDetailProps> = ({
         {isLoading || cakeAmount.isNaN() ? (
           <Skeleton my="4px" mr="10px" height={20} width={110} />
         ) : (
-          <Balance fontSize="20px" bold unit=" FAST" value={getBalanceNumber(cakeAmount)} decimals={0} />
+          <Balance color="#FFB237" fontSize="20px" bold unit=" FAST" value={getBalanceNumber(cakeAmount)} decimals={0} />
         )}
+
         {isLoading || cakeAmount.isNaN() ? (
           <>
             <Skeleton mt="4px" mb="16px" height={12} width={70} />
           </>
         ) : (
+          <>
           <Balance
             fontSize="12px"
-            color="textSubtle"
+            color="#999999"
             prefix="~$"
             value={getBalanceNumber(cakeAmount.times(cakePriceBusd))}
             decimals={0}
           />
+          </>
         )}
         {isHistoricRound && cakeAmount && (
           <>
             {numberWinners !== '0' && (
-              <Text fontSize="12px" color="textSubtle">
+              <Text fontSize="12px" color="#FFB237">
                 {getFullDisplayBalance(cakeAmount.div(parseInt(numberWinners, 10)), 18, 2)} FAST {t('each')}
               </Text>
             )}
-            <Text fontSize="12px" color="textSubtle">
+            <Text fontSize="12px" color="#FFB237">
               {numberWinners} {t('Winners')}
             </Text>
           </>

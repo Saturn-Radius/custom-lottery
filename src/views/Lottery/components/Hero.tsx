@@ -76,7 +76,7 @@ const TicketContainer = styled(Flex)`
 
 const PrizeTotalBalance = styled(Balance)`
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #FFB237;
 `
 
 const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
@@ -101,83 +101,76 @@ const TicketSvgWrapper = styled.div`
   transform: rotate(-4deg);
 `
 
-const Decorations = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url(/images/decorations/bg-star.svg);
-  background-repeat: no-repeat;
-  background-position: center 0;
-`
-
 const StarsDecorations = styled(Box)`
   position: absolute;
   width: 100%;
   height: 100%;
+  margin-bottom: 50px;
 
   & img {
     position: absolute;
   }
 
   & :nth-child(1) {
-    animation: ${floatingStarsLeft} 3s ease-in-out infinite;
+    animation: ${floatingStarsLeft} 0s ease-in-out infinite;
     animation-delay: 0.25s;
   }
   & :nth-child(2) {
-    animation: ${floatingStarsLeft} 3.5s ease-in-out infinite;
+    // filter: blur(3px);
+    animation: ${floatingStarsLeft} 0s ease-in-out infinite;
     animation-delay: 0.5s;
   }
   & :nth-child(3) {
-    animation: ${floatingStarsRight} 4s ease-in-out infinite;
+    animation: ${floatingStarsRight} 0s ease-in-out infinite;
     animation-delay: 0.75s;
   }
   & :nth-child(4) {
-    animation: ${floatingTicketLeft} 6s ease-in-out infinite;
+    animation: ${floatingTicketLeft} 0s ease-in-out infinite;
     animation-delay: 0.2s;
   }
   & :nth-child(5) {
-    animation: ${floatingTicketRight} 6s ease-in-out infinite;
+    animation: ${floatingTicketRight} 0s ease-in-out infinite;
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
     & :nth-child(1) {
-      left: 3%;
-      top: 42%;
+      left: 8%;
+      top: 25%;
     }
     & :nth-child(2) {
-      left: 9%;
-      top: 23%;
+      left: 5%;
+      top: 78%;
     }
     & :nth-child(3) {
-      right: 2%;
-      top: 24%;
+      right: 8%;
+      top: 18%;
     }
     & :nth-child(4) {
-      left: 8%;
-      top: 67%;
+      right: 10%;
+      top: 77%;
     }
     & :nth-child(5) {
       right: 8%;
-      top: 67%;
+      top: 77%;
     }
   }
 
   ${({ theme }) => theme.mediaQueries.md} {
     & :nth-child(1) {
-      left: 10%;
-      top: 42%;
+      left: 8%;
+      top: 25%;
     }
     & :nth-child(2) {
-      left: 17%;
-      top: 23%;
+      left: 10%;
+      top: 78%;
     }
     & :nth-child(3) {
-      right: 10%;
-      top: 24%;
+      right: 12%;
+      top: 18%;
     }
     & :nth-child(4) {
-      left: 17%;
-      top: 67%;
+      right: 20%;
+      top: 77%;
     }
     & :nth-child(5) {
       right: 17%;
@@ -187,20 +180,20 @@ const StarsDecorations = styled(Box)`
 
   ${({ theme }) => theme.mediaQueries.xl} {
     & :nth-child(1) {
-      left: 19%;
-      top: 42%;
+      left: 15%;
+      top: 25%;
     }
     & :nth-child(2) {
-      left: 25%;
-      top: 23%;
+      left: 13%;
+      top: 78%;
     }
     & :nth-child(3) {
-      right: 19%;
-      top: 24%;
+      right: 20%;
+      top: 18%;
     }
     & :nth-child(4) {
-      left: 24%;
-      top: 67%;
+      right: 25%;
+      top: 77%;
     }
     & :nth-child(5) {
       right: 24%;
@@ -225,12 +218,15 @@ const Hero = () => {
     if (status === LotteryStatus.OPEN) {
       return (
         <>
+         <Heading mb="32px"  color="#666666" marginTop="15px">  {/* scale="lg" */}
+            {t('The FastSwap Lottery')}
+         </Heading>
           {prizeInBusd.isNaN() ? (
             <Skeleton my="7px" height={60} width={190} />
           ) : (
             <PrizeTotalBalance fontSize="64px" bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
           )}
-          <Heading mb="32px"  color="#ffffff">  {/* scale="lg" */}
+          <Heading mb="32px"  color="#666666">  {/* scale="lg" */}
             {t('in prizes!')}
           </Heading>
         </>
@@ -245,17 +241,13 @@ const Hero = () => {
 
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="center">
-      <Decorations />
-      <StarsDecorations display={['none', 'none', 'block']}>
-        <img src="/images/lottery/star-big.png" width="124px" height="109px" alt="" />
-        <img src="/images/lottery/star-small.png" width="70px" height="62px" alt="" />
-        <img src="/images/lottery/three-stars.png" width="130px" height="144px" alt="" />
-        <img src="/images/lottery/ticket-l.png" width="123px" height="83px" alt="" />
-        <img src="/images/lottery/ticket-r.png" width="121px" height="72px" alt="" />
+      <StarsDecorations display={['none', 'none', 'inline']}>
+        {/* <img src="/images/lottery/coin-all.png" width="80%" height="80%" alt="" /> */}
+        <img src="/images/lottery/coin.png" width="121px" height="121px" alt="" />
+        <img src="/images/lottery/coin.png" width="150px" height="150px" alt="" />
+        <img src="/images/lottery/coin.png" width="100px" height="100px" alt="" />
+        <img src="/images/lottery/coin.png" width="121px" height="121px" alt="" />
       </StarsDecorations>
-      <Heading mb="8px" color="#ffffff" id="lottery-hero-title">  {/* scale="md" */}
-        {t('The FastSwap Lottery')}
-      </Heading>
       {getHeroHeading()}
       <TicketContainer
         position="relative"
@@ -265,7 +257,7 @@ const Hero = () => {
         justifyContent="center"
       >
         <ButtonWrapper>
-          <StyledBuyTicketButton disabled={ticketBuyIsDisabled} />
+          <StyledBuyTicketButton style={{backgroundColor:'#1BB697',boxShadow:'2px 7px 7px -1px rgba(27, 182, 151, 0.3)'}} disabled={ticketBuyIsDisabled} />
         </ButtonWrapper>
         <TicketSvgWrapper>
           <TicketPurchaseCard width="100%" />

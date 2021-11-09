@@ -15,39 +15,45 @@ const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
     margin-right: 0;
   }
 `
+const Title = styled.span<{ color?: string, size?: string }>`
+  margin-top: 15px;
+  justify:center;
+  font-size: ${({ size }) => size};
+  color:${({ color }) => color};
+`;
 
 const StyledTimerText = styled(Heading)`
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #FFB237;
 `
 
 const Wrapper: React.FC<TimerProps> = ({ minutes, hours, days }) => {
   const { t } = useTranslation()
 
   return (
-    <StyledTimerFlex alignItems="flex-end">
+    <StyledTimerFlex alignItems="flex-top">
       {Boolean(days) && (
         <>
           <StyledTimerText mb="-4px" mr="4px">  {/* scale="xl" */}
-            {days}
+          <Title size="24px">{days}</Title>
           </StyledTimerText>
-          <StyledTimerText mr="12px">{t('d')}</StyledTimerText>
+          <StyledTimerText mr="8px"><Title size="24px">{t('d')}</Title></StyledTimerText>
         </>
       )}
       {Boolean(hours) && (
         <>
           <StyledTimerText mb="-4px" mr="4px">  {/* scale="xl" */}
-            {hours}
+          <Title size="24px">{hours}</Title>
           </StyledTimerText>
-          <StyledTimerText mr="12px">{t('h')}</StyledTimerText>
+          <StyledTimerText mr="8px"><Title size="24px">{t('h')}</Title></StyledTimerText>
         </>
       )}
       {Boolean(minutes) && (
         <>
           <StyledTimerText mb="-4px" mr="4px">  {/* scale="xl" */}
-            {minutes}
+          <Title size="24px">{minutes}</Title>
           </StyledTimerText>
-          <StyledTimerText mr="12px">{t('m')}</StyledTimerText>
+          <StyledTimerText mr="8px"><Title size="24px">{t('m')}</Title></StyledTimerText>
         </>
       )}
     </StyledTimerFlex>

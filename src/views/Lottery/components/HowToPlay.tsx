@@ -61,13 +61,13 @@ const StepCard: React.FC<{ step: Step }> = ({ step }) => {
   return (
     <StyledStepCard width="100%">
       <StepCardInner height={['200px', '180px', null, '200px']}>
-        <Text mb="16px" fontSize="12px" bold textAlign="right" textTransform="uppercase">
+        <Text mb="16px" fontSize="12px" bold textAlign="right" textTransform="uppercase" color="#666666">
           {step.label}
         </Text>
-        <Heading mb="16px" color="secondary">  {/** scale="lg"  */}
+        <Heading mb="16px" color="#1BB697">  {/** scale="lg"  */}
           {step.title}
         </Heading>
-        <Text color="textSubtle">{step.subtitle}</Text>
+        <Text color="#666666" >{step.subtitle}</Text>
       </StepCardInner>
     </StyledStepCard>
   )
@@ -118,11 +118,11 @@ const MatchExampleCard = () => {
         <MatchExampleContainer>
           <Box />
           <ExampleBalls />
-          <Text lineHeight="72px" textAlign="right" color="secondary" bold mr="20px">
+          <Text lineHeight="72px" textAlign="right" color="#1BB697" bold mr="20px">
             {t('A')}
           </Text>
           <MatchExampleA width={exampleWidth} height="46px" isDark={isDark} />
-          <Text lineHeight="72px" textAlign="right" color="secondary" bold mr="20px">
+          <Text lineHeight="72px" textAlign="right" color="#1BB697" bold mr="20px">
             {t('B')}
           </Text>
           <MatchExampleB width={exampleWidth} height="46px" isDark={isDark} />
@@ -146,12 +146,19 @@ const AllocationColorCircle = styled.div<{ color: string }>`
   margin-right: 8px;
   background-color: ${({ color }) => color};
 `
+const Title = styled.span<{ color?: string ,size?:string}>`
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: ${({ size }) => size};
+  color:${({ color }) => color};
+  font-weight: bold;
+`;
 
 const AllocationMatch: React.FC<{ color: string; text: string }> = ({ color, text }) => {
   return (
     <Flex alignItems="center">
       <AllocationColorCircle color={color} />
-      <Text color="textSubtle">{text}</Text>
+      <Text color="#666666">{text}</Text>
     </Flex>
   )
 }
@@ -165,40 +172,40 @@ const PoolAllocations = () => {
           <PoolAllocationChart width="100px" height="100px" />
         </Flex>
         <Flex justifyContent="space-between">
-          <Text fontSize="12px" color="secondary" bold textTransform="uppercase">
+          <Text fontSize="12px" color="#1BB697" bold textTransform="uppercase">
             {t('Digits matched')}
           </Text>
-          <Text fontSize="12px" color="secondary" bold textAlign="right" textTransform="uppercase">
+          <Text fontSize="12px" color="#1BB697" bold textAlign="right" textTransform="uppercase">
             {t('Prize pool allocation')}
           </Text>
         </Flex>
         <AllocationGrid>
           <AllocationMatch color="#FFE362" text={t('Matches first %digits%', { digits: 1 })} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             2%
           </Text>
           <AllocationMatch color="#85C54E" text={t('Matches first %digits%', { digits: 2 })} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             3%
           </Text>
           <AllocationMatch color="#028E75" text={t('Matches first %digits%', { digits: 3 })} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             5%
           </Text>
           <AllocationMatch color="#36E8F5" text={t('Matches first %digits%', { digits: 4 })} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             10%
           </Text>
           <AllocationMatch color="#A881FC" text={t('Matches first %digits%', { digits: 5 })} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             20%
           </Text>
           <AllocationMatch color="#D750B2" text={t('Matches all 6')} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             40%
           </Text>
           <AllocationMatch color="#BDC2C4" text={t('Burn Pool')} />
-          <Text textAlign="right" bold>
+          <Text color="#333333" textAlign="right" bold>
             20%
           </Text>
         </AllocationGrid>
@@ -218,12 +225,12 @@ const HowToPlay: React.FC = () => {
     {
       label: t('Step %number%', { number: 1 }),
       title: t('Buy Tickets'),
-      subtitle: t('Prices are set when the round starts, equal to 5 USD in CAKE per ticket.'),
+      subtitle: t('Prices are set when the round starts, equal to 5 USD in FAST per ticket.'),
     },
     {
       label: t('Step %number%', { number: 2 }),
       title: t('Wait for the Draw'),
-      subtitle: t('There are two draws every day: one every 12 hours.'),
+      subtitle: t('There are two draws every day: one every 48 hours.'),
     },
     {
       label: t('Step %number%', { number: 3 }),
@@ -234,15 +241,15 @@ const HowToPlay: React.FC = () => {
   return (
     <Box width="100%">
       <Flex mb="40px" alignItems="center" flexDirection="column">
-        <Heading mb="24px" color="secondary">  {/* scale="xl"  */}
+        <Title size="36px" color="#1BB697">  {/* scale="xl"  */}
           {t('How to Play')}
-        </Heading>
-        <Text textAlign="center">
+        </Title>
+        <Text textAlign="center" color="#666666">
           {t(
             'If the digits on your tickets match the winning numbers in the correct order, you win a portion of the prize pool.',
           )}
         </Text>
-        <Text>{t('Simple!')}</Text>
+        <Text color="#666666">{t('Simple!')}</Text>
       </Flex>
       <StepContainer>
         {steps.map((step) => (
@@ -252,32 +259,33 @@ const HowToPlay: React.FC = () => {
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flex="2" flexDirection="column">
-          <Heading mb="24px" color="secondary"> {/* scale="lg" */}
-            {t('Winning Criteria')}
+          <Heading mb="24px" color="#1BB697"> {/* scale="lg" */}
+            {/* {t('Winning Criteria')} */}
+            {t('Buy Tickets')}
           </Heading>
-          <Heading mb="24px">  { /* scale="md" */}
+          <Heading mb="24px" color="#FFB237">  { /* scale="md" */}
             {t('The digits on your ticket must match in the correct order to win.')}
           </Heading>
-          <Text mb="16px" color="textSubtle">
+          <Text mb="16px" color="#666666">
             {t('Here’s an example lottery draw, with two tickets, A and B.')}
           </Text>
           <BulletList>
             <li>
-              <Text color="textSubtle">  {/* display="inline" */}
+              <Text color="#666666">  {/* display="inline" */}
                 {t(
                   'Ticket A: The first 3 digits and the last 2 digits match, but the 4th digit is wrong, so this ticket only wins a “Match first 3” prize.',
                 )}
               </Text>
             </li>
             <li>
-              <Text color="textSubtle">  {/* display="inline" */}
+              <Text color="#666666">  {/* display="inline" */}
                 {t(
                   'Ticket B: Even though the last 5 digits match, the first digit is wrong, so this ticket doesn’t win a prize.',
                 )}
               </Text>
             </li>
           </BulletList>
-          <Text mt="16px" color="textSubtle">
+          <Text mt="16px" color="#666666">
             {t(
               'Prize brackets don’t ‘stack’: if you match the first 3 digits in order, you’ll only win prizes from the ‘Match 3’ bracket, and not from ‘Match 1’ and ‘Match 2’.',
             )}
@@ -290,44 +298,44 @@ const HowToPlay: React.FC = () => {
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flex="2" flexDirection="column">
-          <Heading mb="24px" color="secondary">  {/* scale="lg" */}
+          <Heading mb="24px" color="#1BB697">  {/* scale="lg" */}
             {t('Prize Funds')}
           </Heading>
-          <Text color="textSubtle">{t('The prizes for each lottery round come from three sources:')}</Text>
-          <Heading my="16px" >  {/* scale="md" */}
+          <Text color="#666666">{t('The prizes for each lottery round come from three sources:')}</Text>
+          <Heading my="16px"color="#FFB237">  {/* scale="md" */}
             {t('Ticket Purchases')}
           </Heading>
           <BulletList>
             <li>
-              <Text color="textSubtle">  {/* display="inline" */}
-                {t('100% of the CAKE paid by people buying tickets that round goes back into the prize pools.')}
+              <Text color="#666666">  {/* display="inline" */}
+                {t('100% of the FAST paid by people buying tickets that round goes back into the prize pools.')}
               </Text>
             </li>
           </BulletList>
-          <Heading my="16px">  {/* scale="md" */}
+          <Heading my="16px" color="#FFB237">  {/* scale="md" */}
             {t('Rollover Prizes')}
           </Heading>
           <BulletList>
             <li>
-              <Text color="textSubtle">  {/* display="inline"  */}
+              <Text color="#666666">  {/* display="inline"  */}
                 {t(
-                  'After every round, if nobody wins in one of the prize brackets, the unclaimed CAKE for that bracket rolls over into the next round and are redistributed among the prize pools.',
+                  'After every round, if nobody wins in one of the prize brackets, the unclaimed FAST for that bracket rolls over into the next round and are redistributed among the prize pools.',
                 )}
               </Text>
             </li>
           </BulletList>
-          <Heading my="16px">  {/* scale="md" */}
-            {t('CAKE Injections')}
+          <Heading my="16px" color="#FFB237">  {/* scale="md" */}
+            {t('FAST Injections')}
           </Heading>
           <BulletList>
             <li>
-              <Text color="textSubtle">  {/* display="inline" */}
+              <Text color="#666666">  {/* display="inline" */}
                 {t(
-                  'An average total of 35,000 CAKE from the treasury is added to lottery rounds over the course of a week. This CAKE is of course also included in rollovers! Read more in our guide to ',
+                  'An average total of 35,000 FAST from the treasury is added to lottery rounds over the course of a week. This FAST is of course also included in rollovers! ',
                 )}
-                <InlineLink href="https://docs.pancakeswap.finance/tokenomics/cake/cake-tokenomics">
-                  {t('CAKE Tokenomics')}
-                </InlineLink>
+                {/* <InlineLink href="https://docs.pancakeswap.finance/tokenomics/cake/cake-tokenomics">
+                <Text color="#1BB697"> {t('FAST Tokenomics')}</Text>
+                </InlineLink> */}
               </Text>
             </li>
           </BulletList>
@@ -337,19 +345,20 @@ const HowToPlay: React.FC = () => {
         </Flex>
       </GappedFlex>
       <Divider />
-      <Flex justifyContent="center" alignItems="center" flexDirection={['column', 'column', 'row']}>
-        <Image width={240} height={172} src="/images/lottery/tombola.png" alt="tombola bunny" mr="8px" mb="16px" />
-        <Flex maxWidth="300px" flexDirection="column">
-          <Heading mb="16px">  {/* scale="md" */}
+      <Flex justifyContent="center"  alignItems="center" flexDirection={['column', 'column', 'row']}>
+        <Flex maxWidth="250px" flexDirection="column" alignItems="center">
+          <Image width={130} height={130} src="/images/lottery/question.png" alt="tombola bunny" mr="8px" mb="16px" />
+          <Text fontSize="20px" color="#1BB697" textAlign="center">  {/* scale="md" */}
             {t('Still got questions?')}
-          </Heading>
-          <Text>
-            {t('Check our in-depth guide on')}{' '}
-            <InlineLink href="https://docs.pancakeswap.finance/products/lottery/lottery-guide">
-              {t('how to play the PancakeSwap lottery!')}
-            </InlineLink>
+          </Text>
+          <Text color="#666666" textAlign="center">
+            {t('Check our in-depth guide')}{' '}
+            {/* <InlineLink href="https://docs.pancakeswap.finance/products/lottery/lottery-guide">
+            <Text color="#1BB697">{t('how to play the FastSwap lottery!')}</Text>
+            </InlineLink> */}
           </Text>
         </Flex>
+
       </Flex>
     </Box>
   )
