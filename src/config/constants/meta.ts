@@ -4,8 +4,8 @@ import { PageMeta } from './types'
 export const DEFAULT_META: PageMeta = {
   title: 'FastSwap',
   description:
-    'The most popular AMM on BSC by user count! Earn FAST through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust.',
-  // image: 'https://pancakeswap.finance/images/hero.png',
+    'The most popular AMM on BSC by user count! Earn FAST through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by FastSwap), NFTs, and more, on a platform you can trust.',
+  // image: 'https://Fastswap.finance/images/hero.png',
   image: '',
 }
 
@@ -28,102 +28,102 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
   switch (basePath) {
     case '/':
       return {
-        title: `${t('Home')} | ${t('PancakeSwap')}`,
+        title: `${t('Home')} | ${t('FastSwap')}`,
       }
     case '/swap':
       return {
-        title: `${t('Exchange')} | ${t('PancakeSwap')}`,
+        title: `${t('Exchange')} | ${t('FastSwap')}`,
       }
     case '/add':
       return {
-        title: `${t('Add Liquidity')} | ${t('PancakeSwap')}`,
+        title: `${t('Add Liquidity')} | ${t('FastSwap')}`,
       }
     case '/remove':
       return {
-        title: `${t('Remove Liquidity')} | ${t('PancakeSwap')}`,
+        title: `${t('Remove Liquidity')} | ${t('FastSwap')}`,
       }
     case '/liquidity':
       return {
-        title: `${t('Liquidity')} | ${t('PancakeSwap')}`,
+        title: `${t('Liquidity')} | ${t('FastSwap')}`,
       }
     case '/find':
       return {
-        title: `${t('Import Pool')} | ${t('PancakeSwap')}`,
+        title: `${t('Import Pool')} | ${t('FastSwap')}`,
       }
     case '/competition':
       return {
-        title: `${t('Trading Battle')} | ${t('PancakeSwap')}`,
+        title: `${t('Trading Battle')} | ${t('FastSwap')}`,
       }
     case '/prediction':
       return {
-        title: `${t('Prediction')} | ${t('PancakeSwap')}`,
+        title: `${t('Prediction')} | ${t('FastSwap')}`,
       }
     case '/prediction/leaderboard':
       return {
-        title: `${t('Leaderboard')} | ${t('PancakeSwap')}`,
+        title: `${t('Leaderboard')} | ${t('FastSwap')}`,
       }
     case '/farms':
       return {
-        title: `${t('Farms')} | ${t('PancakeSwap')}`,
+        title: `${t('Farms')} | ${t('FastSwap')}`,
       }
     case '/farms/auction':
       return {
-        title: `${t('Farm Auctions')} | ${t('PancakeSwap')}`,
+        title: `${t('Farm Auctions')} | ${t('FastSwap')}`,
       }
     case '/pools':
       return {
-        title: `${t('Pools')} | ${t('PancakeSwap')}`,
+        title: `${t('Pools')} | ${t('FastSwap')}`,
       }
     case '/lottery':
       return {
-        title: `${t('Lottery')} | ${t('PancakeSwap')}`,
+        title: `${t('Lottery')} | ${t('FastSwap')}`,
       }
     case '/collectibles':
       return {
-        title: `${t('Collectibles')} | ${t('PancakeSwap')}`,
+        title: `${t('Collectibles')} | ${t('FastSwap')}`,
       }
     case '/ifo':
       return {
-        title: `${t('Initial Farm Offering')} | ${t('PancakeSwap')}`,
+        title: `${t('Initial Farm Offering')} | ${t('FastSwap')}`,
       }
     case '/teams':
       return {
-        title: `${t('Leaderboard')} | ${t('PancakeSwap')}`,
+        title: `${t('Leaderboard')} | ${t('FastSwap')}`,
       }
     case '/profile':
       return {
-        title: `${t('Your Profile')} | ${t('PancakeSwap')}`,
+        title: `${t('Your Profile')} | ${t('FastSwap')}`,
       }
     case '/profile/tasks':
       return {
-        title: `${t('Task Center')} | ${t('PancakeSwap')}`,
+        title: `${t('Task Center')} | ${t('FastSwap')}`,
       }
     case '/voting':
       return {
-        title: `${t('Voting')} | ${t('PancakeSwap')}`,
+        title: `${t('Voting')} | ${t('FastSwap')}`,
       }
     case '/voting/proposal':
       return {
-        title: `${t('Proposals')} | ${t('PancakeSwap')}`,
+        title: `${t('Proposals')} | ${t('FastSwap')}`,
       }
     case '/voting/proposal/create':
       return {
-        title: `${t('Make a Proposal')} | ${t('PancakeSwap')}`,
+        title: `${t('Make a Proposal')} | ${t('FastSwap')}`,
       }
     case '/info':
       return {
-        title: `${t('Overview')} | ${t('PancakeSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        title: `${t('Overview')} | ${t('FastSwap Info & Analytics')}`,
+        description: 'View statistics for Fastswap exchanges.',
       }
     case '/info/pools':
       return {
-        title: `${t('Pools')} | ${t('PancakeSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        title: `${t('Pools')} | ${t('FastSwap Info & Analytics')}`,
+        description: 'View statistics for Fastswap exchanges.',
       }
     case '/info/tokens':
       return {
-        title: `${t('Pools')} | ${t('PancakeSwap Info & Analytics')}`,
-        description: 'View statistics for Pancakeswap exchanges.',
+        title: `${t('Pools')} | ${t('FastSwap Info & Analytics')}`,
+        description: 'View statistics for Fastswap exchanges.',
       }
     default:
       return null

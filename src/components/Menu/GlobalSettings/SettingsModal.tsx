@@ -105,7 +105,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
           <Flex alignItems="center">
             <Text>{t('Flippy sounds')}</Text>
             <QuestionHelper
-              text={t('Fun sounds to make a truly immersive pancake-flipping trading experience')}
+              text={t('Fun sounds to make a truly immersive fastswap-flipping trading experience')}
               placement="top-start"
               ml="4px"
             />

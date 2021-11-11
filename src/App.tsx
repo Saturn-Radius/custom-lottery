@@ -41,10 +41,10 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/" exact>
-              <Redirect to="/lottery" />
+            <Route path="/lottery" exact>
+              <Redirect to="/" />
             </Route>
-            <Route path="/lottery">
+            <Route path="/">
               <Lottery />
             </Route>
             {/* 404 */}
