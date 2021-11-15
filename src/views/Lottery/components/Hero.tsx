@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { Box, Flex, Heading, Skeleton } from '@fastswap-uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeBusd,useAmountTotoal } from 'state/farms/hooks'
 import { useLottery } from 'state/lottery/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
 import Balance from 'components/Balance'
@@ -212,7 +212,16 @@ const Hero = () => {
   const cakePriceBusd = usePriceCakeBusd()
   const prizeInBusd = amountCollectedInCake.times(cakePriceBusd)
   const prizeTotal = getBalanceNumber(prizeInBusd)
-  const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
+
+  const totalAmount=useAmountTotoal()
+  const leftAmountBusd=totalAmount.times(cakePriceBusd)
+  const leftAmount=getBalanceNumber(leftAmountBusd)
+  
+  const sumPrize= prizeTotal+leftAmount
+
+   console.log(sumPrize);
+
+   const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
 
   const getHeroHeading = () => {
     if (status === LotteryStatus.OPEN) {
@@ -224,7 +233,7 @@ const Hero = () => {
           {prizeInBusd.isNaN() ? (
             <Skeleton my="7px" height={60} width={190} />
           ) : (
-            <PrizeTotalBalance fontSize="64px" bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
+            <PrizeTotalBalance fontSize="64px" bold prefix="$" value={sumPrize} mb="8px" decimals={0} />
           )}
           <Heading mb="32px"  color="#666666">  {/* scale="lg" */}
             {t('in prizes!')}

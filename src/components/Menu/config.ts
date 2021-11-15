@@ -21,20 +21,20 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
       },
     ],
   },
-  {
-    label: t('Farms'),
-    icon: 'FarmIcon',
-    href: `${process.env.REACT_APP_MAIN_HOST}`,
-  },
+  // {
+  //   label: t('Farms'),
+  //   icon: 'FarmIcon',
+  //   href: `${process.env.REACT_APP_MAIN_HOST}`,
+  // },
+  // {
+  //   label: 'NewFarms',
+  //   icon: 'FarmIcon',
+  //   href: `${process.env.REACT_APP_NEW_FARMS_HOST}/newfarms`,
+  // },
   {
     label: 'NewFarms V3',
     icon: 'FarmIcon',
     href: `${process.env.REACT_APP_NEW_FARMSV3_HOST}`,
-  },
-  {
-    label: 'NewFarms',
-    icon: 'FarmIcon',
-    href: `${process.env.REACT_APP_NEW_FARMS_HOST}/newfarms`,
   },
   {
     label: t('Lottery'),

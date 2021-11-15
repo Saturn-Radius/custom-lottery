@@ -149,12 +149,25 @@ export const usePriceCakeBusd = (): BigNumber => {
   const cakeBnbFarm = useFarmFromPid(251)
 
   const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
-  console.log(cakeBnbFarm);
+
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceBusdAsString)
   }, [cakePriceBusdAsString])
-
+   console.log(cakeBnbFarm);
   return cakePriceBusd
+}
+
+export const useAmountTotoal = (): BigNumber => {
+  const cakeBnbFarm = useFarmFromPid(251)
+  const BIG_TEN = new BigNumber(10)
+  const amountTotalAsString =cakeBnbFarm.tokenAmountTotal // cakeBnbFarm.tokenAmountTotal.c[0]+cakeBnbFarm.tokenAmountTotal.c[1].toFixed()+cakeBnbFarm.tokenAmountTotal.c[2].toFixed()
+  // const amountTotalNum=amountTotalAsString/BIG_TEN.pow(28)
+
+  const amountTotal = useMemo(() => {
+    return new BigNumber(amountTotalAsString)
+  }, [amountTotalAsString])
+  // console.log(amountTotal);
+  return amountTotal
 }
 // export const usePriceFastBusd = (): BigNumber => {
 //   const fastRes = await axios.get('https://api.coingecko.com/api/v3/coins/fastswap?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')

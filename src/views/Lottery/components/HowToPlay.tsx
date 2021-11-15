@@ -186,23 +186,23 @@ const PoolAllocations = () => {
           </Text>
           <AllocationMatch color="#85C54E" text={t('Matches first %digits%', { digits: 2 })} />
           <Text color="#333333" textAlign="right" bold>
-            3%
+            4%
           </Text>
           <AllocationMatch color="#028E75" text={t('Matches first %digits%', { digits: 3 })} />
           <Text color="#333333" textAlign="right" bold>
-            5%
+            11%
           </Text>
           <AllocationMatch color="#36E8F5" text={t('Matches first %digits%', { digits: 4 })} />
           <Text color="#333333" textAlign="right" bold>
-            10%
+            16%
           </Text>
           <AllocationMatch color="#A881FC" text={t('Matches first %digits%', { digits: 5 })} />
           <Text color="#333333" textAlign="right" bold>
-            20%
+            21%
           </Text>
           <AllocationMatch color="#D750B2" text={t('Matches all 6')} />
           <Text color="#333333" textAlign="right" bold>
-            40%
+            36%
           </Text>
           <AllocationMatch color="#BDC2C4" text={t('Burn Pool')} />
           <Text color="#333333" textAlign="right" bold>
